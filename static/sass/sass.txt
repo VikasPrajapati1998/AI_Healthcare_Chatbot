@@ -1,0 +1,56 @@
+Sass (Syntactically Awesome Style Sheets) is a preprocessor scripting language that is compiled into CSS. Sass extends the capabilities of CSS by providing features like variables, nesting, functions, and more, making it easier to write and maintain stylesheets for web development. Here's how you can use Sass source files in your web development workflow:
+
+1. **Install Sass**:
+   First, you need to install Sass on your development machine. You can do this via npm (Node.js package manager) using the following command:
+
+   ```
+   npm install -g sass
+   ```
+
+   This command installs the Sass compiler globally on your system.
+
+2. **Create a Sass Source File**:
+   Create a `.scss` or `.sass` file that contains your Sass code. For example, you can create a file named `styles.scss`.
+
+   ```scss
+   $primary-color: #3498db;
+
+   body {
+     font-family: Arial, sans-serif;
+     background-color: $primary-color;
+   }
+
+   .header {
+     background-color: darken($primary-color, 10%);
+     color: white;
+   }
+   ```
+
+   In this example, we define a variable, nest styles, and use functions like `darken()`.
+
+3. **Compile Sass to CSS**:
+   Use the `sass` command to compile your Sass source file into a regular CSS file. Run this command in your project directory:
+
+   ```
+   sass styles.scss styles.css
+   ```
+
+   This command compiles `styles.scss` into `styles.css`. You can specify different input and output file names as needed.
+
+4. **Link the Compiled CSS File**:
+   In your HTML file, link to the compiled CSS file (`styles.css`) just like you would with a regular CSS file.
+
+   ```html
+   <link rel="stylesheet" href="styles.css">
+   ```
+
+5. **Watch for Changes (Optional)**:
+   While developing, you can use the `--watch` option to have Sass watch your `.scss` files for changes and automatically recompile them whenever you save:
+
+   ```
+   sass --watch styles.scss:styles.css
+   ```
+
+   This keeps your CSS up to date as you make changes to your Sass source files.
+
+Using Sass in your web development workflow can make your stylesheets more maintainable and flexible. You can take advantage of variables for consistent theming, nesting for improved readability, and functions for dynamic styling. Once you've created and organized your styles using Sass, the compiler will generate the corresponding CSS file for use in your web projects.
